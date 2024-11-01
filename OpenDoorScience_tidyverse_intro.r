@@ -1,6 +1,8 @@
 
 Hey this is Open Door Science
 
+"Branching is smart and fun"
+
 
 # Into the tidyverse ------------------------------------------------------
 
