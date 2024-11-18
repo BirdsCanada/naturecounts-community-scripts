@@ -33,5 +33,5 @@ dat<-combined_data %>% select(record_id, Spcd, Yr, Mo, day, Sex, Alphasex, Age, 
 dat<-dat %>% filter(Yr !=0)
 dat<-dat %>% mutate(season = ifelse(Mo %in% c(4, 5, 6, 7), "spring", ifelse(Mo %in% c(8, 9, 10, 11), "fall", "delete"))) %>% filter(season != "delete")
 
-#Now you can write you file to new name for sharing
+#Now you can write your file to the I drive using a meaningful name 
 write.csv(dat, "I:/LPBO/Banding Data/LPBO_DATE_DESCRIPTION.csv")
