@@ -27,7 +27,7 @@ data_list <- lapply(data_list, function(df) {
 combined_data <- bind_rows(data_list)
 
 #Now you can select the columns of interest and filter for the species of interest
-#if the data need to be zero filled, you will want to create the zero-fill matix first before filtering 
+#if the data need to be zero filled, you will want to create the zero-fill matrix first before filtering 
 
 dat<-combined_data %>% select(record_id, Spcd, Yr, Mo, day, Sex, Alphasex, Age, Alphaage, Wingcrd, fat, Wt)
 dat<-dat %>% filter(Yr !=0)
