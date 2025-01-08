@@ -87,3 +87,21 @@ capsum2<-sp.dat %>%
   group_by(Yr, season) %>% 
   summarise(n_banded=n(), n_recap=sum(duplicated(Bandnum))) %>% 
   arrange(Yr, season)
+
+write.csv(capsum2, "LPBO_Band_NC.csv")
+
+#filter data for Yr >= 1974
+plot<-LPBO %>% filter(Yr >= 1974)
+
+plot<-plot %>% 
+  group_by(Yr, season) %>% 
+  summarise(n_banded=n(), n_recap=sum(duplicated(Bandnum))) %>% 
+  arrange(Yr, season)
+
+#Create a ggplot point and line graph of the number of birds banded each year by season
+ggplot(plot, aes(x=Yr, y=n_banded, color=season))+
+  geom_point()+
+  geom_line()+
+  labs(title="Number of birds banded each year by season", x="Year", y="Number of birds banded")+
+  theme_minimal()
+
