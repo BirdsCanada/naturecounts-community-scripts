@@ -99,7 +99,7 @@ plot<-plot %>%
   arrange(Yr, season)
 
 #Create a ggplot point and line graph of the number of birds banded each year by season
-ggplot(plot, aes(x=Yr, y=n_banded, color=season))+
+p<-ggplot(plot, aes(x=Yr, y=n_banded, color=season))+
   geom_point()+
   geom_line()+
   labs(title="Number of birds banded each year by season", x="Year", y="Number of birds banded")+
