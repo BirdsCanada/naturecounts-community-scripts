@@ -16,7 +16,7 @@ nc_query_table(uername = "YOURUSERNAME") #you will be prompted for a password.
 #You are looking to download the CmmnLpboBand table.
 LPBO<-nc_query_table("CmmnLpboBand", username = "dethier")
 
-#Create a srping and fall column
+#Create a spring and fall column
 LPBO<-LPBO %>% mutate(season = ifelse(Mo %in% c(4, 5, 6, 7), "spring", ifelse(Mo %in% c(8, 9, 10, 11), "fall", "delete"))) %>% filter(season != "delete")
 
 #Identify recapture birds by identifying Bandnum appearing more than once in the records
